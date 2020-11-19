@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 [appBackground]=" 'lavender' " [defaultColor]="'transparent'">To Do List!</h2>
+  <div class="input-group">
+    <input class="form-control" type="text" #inputItem>
+    <div class="input-group-prepend">
+      <button class="btn-outline-dark btn" type="button" (click)="addItem(inputItem.value)">Add</button>
+    </div>
+  </div>
+  <app-search></app-search>
+  <div class="custom-control custom-checkbox" *ngFor="let item of list | filter:searchItem ">
+    <input type="checkbox" class="custom-control-input"  id="customCheck">
+    <label class="custom-control-label" for="customCheck" [appBackground]=" 'peachPuff' " [defaultColor]="'transparent'">{{item | todoDisplay }}</label>
+  </div>
+</div>
