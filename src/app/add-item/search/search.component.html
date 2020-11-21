@@ -1,6 +1,6 @@
 <div class="col-4 input-group">
-  <input class="form-control" type="text" (keyup)="search.emit(searchItem)">
+  <input class="form-control" type="text" #searcher (keyup)="search(searcher.value)">
   <div class="input-group-prepend">
-    <button class="btn-outline-dark btn" type="button">Search!</button>
+    <button class="btn-outline-dark btn" type="button" (click)="search(searcher.value)">Search!</button>
   </div>
 </div>

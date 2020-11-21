@@ -6,9 +6,9 @@
       <button class="btn-outline-dark btn" type="button" (click)="addItem(inputItem.value)">Add</button>
     </div>
   </div>
-  <app-search></app-search>
-  <div class="custom-control custom-checkbox" *ngFor="let item of list | filter:searchItem ">
-    <input type="checkbox" class="custom-control-input"  id="customCheck">
-    <label class="custom-control-label" for="customCheck" [appBackground]=" 'peachPuff' " [defaultColor]="'transparent'">{{item | todoDisplay }}</label>
+  <app-search (getItem)="getItem($event)" ></app-search>
+  <div class="custom-control custom-checkbox" *ngFor="let item of list | filter:searchItem, let ind = index">
+    <input type="checkbox" class="custom-control-input"  id="customCheck{{ind}}">
+    <label class="custom-control-label" for="customCheck{{ind}}" [appBackground]=" 'peachPuff' " [defaultColor]="'transparent'">{{item | todoDisplay }}</label>
   </div>
 </div>

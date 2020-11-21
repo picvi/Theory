@@ -10,8 +10,8 @@ export class FilterPipe implements PipeTransform {
       return itemList;
     };
     return itemList.filter((item: string) => {
-      item.toLowerCase().indexOf(searchStr.toLowerCase()) !== -1;
-    })
+      return item.toLowerCase().includes(searchStr.toLowerCase());
+    });
   }
 
 }

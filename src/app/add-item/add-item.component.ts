@@ -1,3 +1,4 @@
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Component} from '@angular/core';
 
 @Component({
@@ -7,13 +8,15 @@ import { Component} from '@angular/core';
 })
 
 export class AddItemComponent{
-  
-  inputValue = ''
-  list: string[] = []
+  list: string[] = [];
+  searchItem = "";
   constructor() { };
   
   addItem(elem: string) {
-    console.log(this.list)
     this.list.push(elem);
+  }
+
+  getItem(searchStr: string) {
+    this.searchItem = searchStr;
   }
 }
